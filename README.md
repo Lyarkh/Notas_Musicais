@@ -70,8 +70,6 @@ Triade Menor: I - III♭ - V
 
 Triade diminuto: I - III♭ - V♭
 
-
-
 ### Campo harmônico
 
 | I   | ii  | iii | IV  | V   | vi  | VII° |
@@ -85,13 +83,11 @@ Triade diminuto: I - III♭ - V♭
 
 I - IV - V
 
-
-
 ---
 
 ---
 
-## Exemplo de uso!
+## Exemplo de uso
 
 ```bash
 notas-musicais c maior
@@ -111,8 +107,6 @@ notas-musicais c maior --acordes | --campo | --harmonico | --chords
 | --- | --- | --- | --- | --- | --- | ---- |
 | C   | Dm  | Em  | F   | G   | Am  | Bm°  |
 
-
-
 Por exemplo, o campo progressões escala maior:
 
 ```bash
@@ -121,7 +115,7 @@ notas-musicais c maior --acordes --prog
 
 E aplicação deve retornar:
 
-```
+```bash
 | I   | ii  | iii | IV  | V   | vi  | vii° |
 | --- | --- | --- | --- | --- | --- | ---- |
 | C   | Dm  | Em  | F   | G   | Am  | Bm°  |
