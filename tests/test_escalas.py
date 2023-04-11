@@ -4,7 +4,9 @@ AAA - 3A - A3
 Arrange - Act - Assets!
 Arrumar - Agir - Garantir!
 """
-from notas_musicais.escalas import escala
+from pytest import raises
+
+from notas_musicais.escalas import NOTAS, escala
 
 
 def test_escala_deve_funcionar_com_notas_minusculas():
@@ -17,3 +19,15 @@ def test_escala_deve_funcionar_com_notas_minusculas():
 
     # Assert
     assert result
+
+
+def test_escala_deve_retornar_uma_error_dizendo_que_a_nota_nao_existe():
+    tonalidade = 'maior'
+    tonica = 'X'
+
+    mensagem_de_error = f'Essa nota não existe, tente uma dessas {NOTAS}'
+
+    with raises(ValueError) as error:
+        escala(tonica, tonalidade)
+
+    assert mensagem_de_error == error.value.args[0]
