@@ -15,10 +15,11 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         >>> escala('C', 'maior')
         {'notas': ['C', 'D', 'E', 'F', 'G', 'A', 'B'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
 
-        >>> escala('A', 'maior')
+        >>> escala('a', 'maior')
         {'notas': ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
 
     """
+    tonica = tonica.upper()
     intervalos = ESCALAS[tonalidade]
     tonica_pos = NOTAS.index(tonica)
 
