@@ -9,7 +9,7 @@ from pytest import raises
 from notas_musicais.escalas import NOTAS, escala
 
 
-def test_escala_deve_funcionar_com_notas_minusculas():
+def test_deve_funcionar_com_notas_minusculas():
     # Arrange
     tonica = 'c'
     tonalidade = 'maior'
@@ -21,7 +21,7 @@ def test_escala_deve_funcionar_com_notas_minusculas():
     assert result
 
 
-def test_escala_deve_retornar_uma_error_dizendo_que_a_nota_nao_existe():
+def test_deve_retornar_uma_error_dizendo_que_a_nota_nao_existe():
     tonalidade = 'maior'
     tonica = 'X'
 
