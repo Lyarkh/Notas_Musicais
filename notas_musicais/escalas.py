@@ -24,12 +24,16 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
 
     """
     tonica = tonica.upper()
-    intervalos = ESCALAS[tonalidade]
 
     try:
+        intervalos = ESCALAS[tonalidade]
         tonica_pos = NOTAS.index(tonica)
     except ValueError:
         raise ValueError(f'Essa nota não existe, tente uma dessas {NOTAS}')
+    except KeyError:
+        raise KeyError(
+            f'Essa escala não existe ou não foi implementada. Tente uma dessas {list(ESCALAS.keys())}'
+        )
 
     temp = []
     for intervalo in intervalos:
