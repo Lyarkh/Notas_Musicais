@@ -14,6 +14,7 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
 
     Raises:
         ValueError: Caso a tônica não seja uma nota válida
+        Keyerror: Caso a escala não exista ou não tenha sido implementada
 
     Examples:
         >>> escala('C', 'maior')
