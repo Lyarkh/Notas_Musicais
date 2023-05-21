@@ -56,3 +56,12 @@ def test_deve_retornar_uma_error_dizendo_que_a_escala_nao_existe():
 def test_deve_retornar_as_notas_corretas(tonica, esperado):
     resultado = escala(tonica, 'maior')
     assert resultado['notas'] == esperado
+
+
+def test_deve_retornar_os_sete_graus():
+    tonica = 'c'
+    tonalidade = 'maior'
+    esperado = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+
+    resultado = escala(tonica, tonalidade)['graus']
+    assert resultado == esperado
