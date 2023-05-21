@@ -63,5 +63,5 @@ def test_deve_retornar_os_sete_graus():
     tonalidade = 'maior'
     esperado = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
 
-    resultado = escala(tonica, tonalidade)['graus']
-    assert resultado == esperado
+    resultado = escala(tonica, tonalidade)
+    assert resultado['graus'] == esperado
