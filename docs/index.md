@@ -57,3 +57,26 @@ Que terá como resultado:
 │ D# │ F  │ G   │ G# │ A# │ C  │ D   │
 └────┴────┴─────┴────┴────┴────┴─────┘
 ```
+
+## Mais informações sobre o CLI
+
+Para descobrir outras opções, você pode usar a flag `--help`
+
+```bash
+    poetry run escalas --help
+
+
+Usage: escalas [OPTIONS] [TONICA] [TONALIDADE]
+
+╭─ Arguments ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│   tonica          [TONICA]      Tônica da escala [default: c]                                                                                             │
+│   tonalidade      [TONALIDADE]  Tonalidade da escala [default: maior]                                                                                     │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --install-completion        [bash|zsh|fish|powershell|pwsh]  Install completion for the specified shell. [default: None]                                  │
+│ --show-completion           [bash|zsh|fish|powershell|pwsh]  Show completion for the specified shell, to copy it or customize the installation.           │
+│                                                              [default: None]                                                                              │
+│ --help                                                       Show this message and exit.                                                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+```
