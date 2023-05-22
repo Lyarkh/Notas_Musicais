@@ -18,6 +18,8 @@ C    E    G
     'nota,esperado',
     [
         ('C', ['C', 'E', 'G']),
+        ('Cm', ['C', 'D#', 'G']),
+        ('Cº', ['C', 'D#', 'F#']),
         ('F#', ['F#', 'A#', 'C#']),
     ]
 )
@@ -27,10 +29,15 @@ def test_acorde_deve_retornar_as_notas_correspondentes(nota, esperado):
     assert notas == esperado
 
 
-def test_acorde_deve_retornar_os_graus_correspondentes():
-    nota = 'C'
-    esperado = ['I', 'III', 'V']
-
-    _, graus = resultado = acorde(nota).values()
+@mark.parametrize(
+    'cifra,esperado',
+    [
+        ('C', ['I', 'III', 'V']),
+        ('Cm', ['I', 'III-', 'V']),
+        ('Cº', ['I', 'III-', 'V-']),
+    ]
+)
+def test_acorde_deve_retornar_os_graus_correspondentes(cifra, esperado):
+    _, graus = resultado = acorde(cifra).values()
 
     assert resultado == esperado
