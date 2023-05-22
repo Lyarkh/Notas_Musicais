@@ -1,9 +1,11 @@
 from notas_musicais.escalas import NOTAS, escala
 
+
 def semitom(nota, intervalo):
     pos = NOTAS.index(nota) + intervalo
 
     return NOTAS[pos % 12]
+
 
 def triade(nota, tonalidade):
     graus = (0, 2, 4)
