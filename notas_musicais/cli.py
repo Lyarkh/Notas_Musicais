@@ -1,12 +1,14 @@
 from rich.console import Console
 from rich.table import Table
-from typer import Argument, run
+from typer import Argument, Typer
 
 from notas_musicais.escalas import escala
 
 console = Console()
+app = Typer()
 
 
+@app.command()
 def escalas(
     tonica=Argument('c', help='Tônica da escala'),
     tonalidade=Argument('maior', help='Tonalidade da escala'),
@@ -19,7 +21,3 @@ def escalas(
 
     table.add_row(*notas)
     console.print(table)
-
-
-if __name__ == '__main__':
-    run(escalas)
