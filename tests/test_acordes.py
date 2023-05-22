@@ -38,6 +38,6 @@ def test_acorde_deve_retornar_as_notas_correspondentes(nota, esperado):
     ],
 )
 def test_acorde_deve_retornar_os_graus_correspondentes(cifra, esperado):
-    _, graus = resultado = acorde(cifra).values()
+    _, graus = acorde(cifra).values()
 
     assert esperado == graus
