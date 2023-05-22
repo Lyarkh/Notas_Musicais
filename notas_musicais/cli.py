@@ -10,8 +10,8 @@ app = Typer()
 
 @app.command()
 def escalas(
-    tonica=Argument('c', help='Tônica da escala'),
-    tonalidade=Argument('maior', help='Tonalidade da escala'),
+    tonica: str = Argument('c', help='Tônica da escala'),
+    tonalidade: str = Argument('maior', help='Tonalidade da escala'),
 ):
     table = Table()
     notas, graus = escala(tonica, tonalidade).values()
