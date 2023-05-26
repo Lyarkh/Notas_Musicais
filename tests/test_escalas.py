@@ -57,7 +57,7 @@ def test_deve_retornar_uma_error_dizendo_que_a_escala_nao_existe():
     ],
 )
 def test_deve_retornar_as_notas_corretas(tonica, tonalidade, esperado):
-    resultado = escala(tonica, 'maior')
+    resultado = escala(tonica, tonalidade)
     assert resultado['notas'] == esperado
 
 
