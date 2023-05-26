@@ -1,6 +1,21 @@
 from notas_musicais.escalas import NOTAS, escala
 
 
+def _menor(cifra):
+    nota, _ = cifra.split('m')
+
+    if '+' in cifra:
+        tonica, terca, quinta = triade(nota, 'menor')
+        notas = [tonica, terca, semitom(quinta, intervalo=1)]
+        graus = ['I', 'III-', 'V+']
+
+    else:
+        notas = triade(nota, 'menor')
+        graus = ['I', 'III-', 'V']
+
+    return notas, graus
+
+
 def semitom(nota, intervalo):
     pos = NOTAS.index(nota) + intervalo
 
@@ -21,9 +36,7 @@ def acorde(cifra):
         {'notas': ['C', 'E', 'G'], 'graus': ['I', 'III', 'V']}
     """
     if 'm' in cifra:
-        nota, _ = cifra.split('m')
-        notas = triade(nota, 'menor')
-        graus = ['I', 'III-', 'V']
+        notas, graus = _menor(cifra)
     elif 'º' in cifra:
         nota, _ = cifra.split('º')
         tonica, terca, quinta = triade(nota, 'menor')
