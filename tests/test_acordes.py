@@ -38,6 +38,7 @@ def test_acorde_deve_retornar_as_notas_correspondentes(nota, esperado):
         ('Cm', ['I', 'III-', 'V']),
         ('Cº', ['I', 'III-', 'V-']),
         ('C+', ['I', 'III', 'V+']),
+        ('Cm+', ['I', 'III-', 'V+']),
     ],
 )
 def test_acorde_deve_retornar_os_graus_correspondentes(cifra, esperado):
