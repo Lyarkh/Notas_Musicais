@@ -30,10 +30,10 @@ def acorde(cifra):
         notas = [tonica, terca, semitom(quinta, intervalo=-1)]
         graus = ['I', 'III-', 'V-']
     elif '+' in cifra:
-        nota, _ = cifra.split('º')
+        nota, _ = cifra.split('+')
         tonica, terca, quinta = triade(nota, 'maior')
         notas = [tonica, terca, semitom(quinta, intervalo=+1)]
-        graus = ['I', 'III-', 'V+']
+        graus = ['I', 'III', 'V+']
 
     else:
         notas = triade(cifra, 'maior')
