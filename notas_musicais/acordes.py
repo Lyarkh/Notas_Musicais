@@ -27,8 +27,14 @@ def acorde(cifra):
     elif 'º' in cifra:
         nota, _ = cifra.split('º')
         tonica, terca, quinta = triade(nota, 'menor')
-        notas = [tonica, terca, semitom(quinta, -1)]
+        notas = [tonica, terca, semitom(quinta, intervalo=-1)]
         graus = ['I', 'III-', 'V-']
+    elif '+' in cifra:
+        nota, _ = cifra.split('º')
+        tonica, terca, quinta = triade(nota, 'maior')
+        notas = [tonica, terca, semitom(quinta, intervalo=+1)]
+        graus = ['I', 'III-', 'V+']
+
     else:
         notas = triade(cifra, 'maior')
         graus = ['I', 'III', 'V']
