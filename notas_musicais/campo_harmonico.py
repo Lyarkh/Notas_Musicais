@@ -1,5 +1,5 @@
-from notas_musicais.escalas import escala
 from notas_musicais.acordes import triade
+from notas_musicais.escalas import escala
 
 
 def _triade_na_escala(nota, notas_da_escala):
@@ -7,11 +7,11 @@ def _triade_na_escala(nota, notas_da_escala):
     Saber se as notas de um acorde estão na escala.
 
     Examples:
-        >>> _triade_na_escala('C',['C', 'D', 'E', 'F', 'G', 'A', 'B'])
+        >>> _triade_na_escala('C', ['C', 'D', 'E', 'F', 'G', 'A', 'B'])
         'C'
-        >>> _triade_na_escala('D',['C', 'D', 'E', 'F', 'G', 'A', 'B'])
+        >>> _triade_na_escala('D', ['C', 'D', 'E', 'F', 'G', 'A', 'B'])
         'Dm'
-        >>> _triade_na_escala('B',['C', 'D', 'E', 'F', 'G', 'A', 'B'])
+        >>> _triade_na_escala('B', ['C', 'D', 'E', 'F', 'G', 'A', 'B'])
         'B°'
     """
     tonica, terca, quinta = triade(nota, 'maior')
@@ -63,8 +63,8 @@ def campo_harmonico(tonica: str, tonalidade: str) -> dict[str, list[str]]:
 
     Examples:
         >>> campo_harmonico('C', 'maior')
-        {'acordes' : ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'B°'],'graus': ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'vii°']}
-        >>> campo_harmonico('c', 'menor')
+        {'acordes': ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'B°'], 'graus': ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'vii°']}
+        >>> campo_harmonico('C', 'menor')
         {'acordes': ['Cm', 'D°', 'D#', 'Fm', 'Gm', 'G#', 'A#'], 'graus': ['i', 'ii°', 'III', 'iv', 'v', 'VI', 'VII']}
     """
     notas, _graus = escala(tonica, tonalidade).values()
