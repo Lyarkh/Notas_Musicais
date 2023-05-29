@@ -7,7 +7,18 @@ jobs:
 
     steps:
       - name: Copia os arquivos do repo
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3
 
-      - name: Roda um comando!
-        run: echo $(ls)
+      - name: Instalar o python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10.8"
+
+      - name: Instalar Poetry
+        run: pip install poetry
+
+      - name: Instalar dependências do projeto
+        run: poetry install --without doc
+
+      - name: Rodar os testes
+        run: poetry run task test
