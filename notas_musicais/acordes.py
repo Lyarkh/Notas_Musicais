@@ -39,6 +39,7 @@ def semitom(nota: str, intervalo: int):
         >>> semitom('c', intervalo=-1)
         'B'
     """
+    nota = nota.upper()
     pos = NOTAS.index(nota) + intervalo
 
     return NOTAS[pos % 12]
